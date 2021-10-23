@@ -1,0 +1,8 @@
+#!/bin/bash
+
+docker run --rm -it \
+-w /usr/src/workspace \
+-v ${PWD}:/usr/src/workspace \
+-p 80:8080 \
+golang:1.12 bash -c "mkdir -v -p /usr/local/bin/ && go build -v -o /usr/local/bin/honeypot && /usr/local/bin/honeypot"
+
